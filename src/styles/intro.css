@@ -1,0 +1,10 @@
+.intro {
+  display: flex;
+  height: 100vh;
+  width: 97vw;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: rgb(49, 49, 49);
+}
