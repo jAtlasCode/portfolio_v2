@@ -1,14 +1,32 @@
-import { useState, useRef } from "react";
-import { Container, MantineProvider } from "@mantine/core";
+import React, { useState, useRef, createRef, forwardRef } from "react";
+import {
+  Button,
+  Container,
+  Group,
+  MantineProvider,
+  Title,
+} from "@mantine/core";
 import About from "./Components/About/About";
 import Intro from "./Components/Intro/Intro";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 
 export default function App() {
-  const introRef = useRef(null);
-  const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+  // const navigate = useNavigate();
+  const introRef = useRef<null | HTMLDivElement>(null);
+  const aboutRef = useRef<null | HTMLDivElement>(null);
+  const projectsRef = useRef<null | HTMLDivElement>(null);
+  const contactRef = useRef<null | HTMLDivElement>(null);
+
+  const scrollTo = (ref: any) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const toAbout = () => scrollTo(aboutRef);
 
   return (
     <MantineProvider
@@ -31,14 +49,10 @@ export default function App() {
         },
       }}
     >
+      <ScrollArrow />
       <div className="app">
-        <Container size="xl">
-          <Routes>
-            {routes.map((route) => (
-              <Route path={route.path} element={route.element} />
-            ))}
-          </Routes>
-        </Container>
+        <Intro innerRef={introRef} toAbout={() => scrollTo(aboutRef)} />
+        <About innerRef={aboutRef} />
       </div>
     </MantineProvider>
   );

@@ -1,48 +1,48 @@
 import { Button, Center, Grid, Group, Title } from "@mantine/core";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/intro.css";
 
-interface Props {}
+// interface Props {
+//   toAbout: any;
+// }
 
-const Intro: React.FC<Props> = () => {
+const Intro: React.FC<any> = ({ innerRef, toAbout }) => {
   // const [state, setState] = useState(undefined);
   // useEffect(() => {}, []);
+  const navigate = useNavigate();
 
   return (
     // <Center style={{ width: 600, height: 400, backgroundColor: "grey" }}>
-    <div
-      className="intro"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignContent: "center",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        width: "100vw",
-        height: "100vh",
-      }}
-    >
-      <div
-        style={{
-          marginBottom: 16,
-          textAlign: "center",
-          // width: "30%",
-          // height: "50%",
-        }}
-      >
-        <Title order={1}>Joseph Atlas</Title>
-        <Title order={2}>Software Developer</Title>{" "}
-      </div>
-      <div>
-        <Group>
-          <Button variant="subtle" size="md" compact>
-            About
-          </Button>
-          <Button variant="subtle" size="md" compact>
-            Projects
-          </Button>
-        </Group>
+    <div className="intro" ref={innerRef}>
+      <div className="IntroContent">
+        <div className="IntroTyping">
+          <p>Joseph Atlas</p>
+          <p>Software Engineer</p>
+          {/* <Title order={1}>Joseph Atlas</Title>
+        <Title order={2}>Software Developer</Title>{" "} */}
+        </div>
+        <div className="NavButtons">
+          <Group>
+            <Button
+              variant="subtle"
+              size="md"
+              compact
+              onClick={toAbout}
+              // onClick={() => navigate("/about")}
+            >
+              About
+            </Button>
+            <Button
+              variant="subtle"
+              size="md"
+              compact
+              onClick={() => navigate("/projects")}
+            >
+              Projects
+            </Button>
+          </Group>
+        </div>
       </div>
     </div>
     // </Center>

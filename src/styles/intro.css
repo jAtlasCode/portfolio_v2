@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 .intro {
   display: flex;
   height: 100vh;
@@ -7,4 +8,246 @@
   text-align: center;
   color: white;
   background-color: rgb(49, 49, 49);
+}
+
+.IntroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35vh;
+  /* background-color: black; */
+  width: 280px;
+}
+
+.IntroTyping p {
+  border-right: 0.15em solid cyan;
+  font-family: "Source Code Pro";
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.IntroTyping p:nth-child(1) {
+  margin-left: 20%;
+  width: 200px;
+  /* manually set width */
+  -webkit-animation: type 2s steps(40, end);
+  animation: type 2s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.IntroTyping p:nth-child(2) {
+  width: 335px;
+  /* manually set width */
+  opacity: 0;
+  -webkit-animation: type3 5s steps(40, end),
+    blink 0.5s step-end infinite alternate;
+  animation: type3 2s steps(40, end), blink 0.5s step-end infinite alternate;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+
+  99.9% {
+    border-right: 0.15em solid cyan;
+  }
+
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+
+  99.9% {
+    border-right: 0.15em solid cyan;
+  }
+
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99.9% {
+    border-right: 0.15em solid cyan;
+  }
+
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99.9% {
+    border-right: 0.15em solid cyan;
+  }
+
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-webkit-keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.scrollTop .MuiSvgIcon-root {
+  width: 400px;
+}
+
+@media (max-width: 1250px) {
+  .Skills {
+    width: 80vw;
+  }
+  .Projects {
+    /* height: 90vh; */
+  }
+  .NavButtons .MuiButton-label {
+    color: cyan;
+  }
+}
+
+@media (max-width: 415px) {
+  .About {
+    /* height: 200vh; */
+    justify-content: flex-start;
+    margin-bottom: 25px;
+  }
+
+  .Skills {
+    /* background-color: blue; */
+    justify-content: flex-end;
+  }
+
+  .Projects {
+    /* height: 300vh; */
+  }
+
+  .NavButtons .MuiButton-label {
+    color: cyan;
+  }
+
+  .scrollTop {
+    right: 1%;
+  }
+}
+
+@media (max-width: 376px) {
+  .About {
+    justify-content: flex-start;
+  }
+
+  .Skills {
+    width: 90vw;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .scrollTop {
+    bottom: 20px;
+  }
+
+  .Projects {
+    /* height: 330vh; */
+    /* height: fit-content; */
+    flex-direction: column;
+  }
+
+  .scrollTop {
+    right: 1%;
+  }
+
+  .IntroContent {
+    width: 280px;
+    align-items: center;
+  }
+
+  .IntroTyping p {
+    font-size: 22px;
+  }
+
+  .IntroTyping p:nth-child(1) {
+    width: 170px;
+  }
+
+  .IntroTyping p:nth-child(2) {
+    width: 280px;
+  }
 }

@@ -2,7 +2,16 @@
   text-align: center;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  /* height: 100vh; */
+  height: 100%;
+  position: relative;
+  /* background-color: rgb; */
+  overflow: hidden;
+}
+
+.About {
   height: 100vh;
 }
 
